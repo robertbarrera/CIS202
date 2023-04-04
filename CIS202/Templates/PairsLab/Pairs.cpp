@@ -33,35 +33,28 @@ using namespace std;
 
 /*** Template class Pair ***/
 template<typename TheType> class Pair {
-   public:
-      void Input();
-      void Output();
-      char CompareWith(Pair<TheType>* otherPair) ;
-      void ShowComparison(Pair<TheType>* otherPair);
+  public:
+    void Input();
+    void Output();
+    char CompareWith(Pair<TheType>* otherPair) ;
+    void ShowComparison(Pair<TheType>* otherPair);
 
-   private:
-      TheType firstVal;
-      TheType secondVal;
+  private:
+    TheType firstVal;
+    TheType secondVal;
 };
 
 // Return '<', '=', or '>' according to whether the Pair is less than,
 // equal to, or greater than the argument Pair
 template<typename TheType>
 char Pair<TheType>::CompareWith(Pair<TheType>* otherPair) {
-   /* ----------------------------- */
-  char comp;
+  /* ----------------------------- */
+  char comp; // char variable to hold comparison operator
+   
+   // compare the pairs, first pair has precendence
   if (firstVal < otherPair->firstVal){
-    if(secondVal < otherPair->secondVal || secondVal == otherPair->secondVal){
-      comp = '<';
-    }
+    comp = '<';
   }
-  
-  else if (firstVal > otherPair->firstVal){
-    if(secondVal > otherPair->secondVal || secondVal == otherPair->secondVal){
-      comp = '>';
-    }
-  }
-  
   else if(firstVal == otherPair->firstVal){
     if(secondVal == otherPair->secondVal){
       comp = '=';
@@ -73,11 +66,10 @@ char Pair<TheType>::CompareWith(Pair<TheType>* otherPair) {
       comp = '<';
     }
   }
-  
-  else{
-    comp = '!';
+  else {
+    comp = '>';
   }
-  return comp;
+  return comp; // return comp character to ShowComparison()
 }
 
 // Input values into a pair
@@ -111,23 +103,23 @@ void Pair<TheType>::ShowComparison(Pair<TheType>* otherPair) {
 /*** End template class Pair ***/
 
 int main() {
-   Pair<int> intPair;
-   Pair<int> intOtherPair;
-   intPair.Input();
-   intOtherPair.Input();
-   intPair.ShowComparison(&intOtherPair);
+  Pair<int> intPair;
+  Pair<int> intOtherPair;
+  intPair.Input();
+  intOtherPair.Input();
+  intPair.ShowComparison(&intOtherPair);
 
-   Pair<double> doublePair;
-   Pair<double> doubleOtherPair;
-   doublePair.Input();
-   doubleOtherPair.Input();
-   doublePair.ShowComparison(&doubleOtherPair);
+  Pair<double> doublePair;
+  Pair<double> doubleOtherPair;
+  doublePair.Input();
+  doubleOtherPair.Input();
+  doublePair.ShowComparison(&doubleOtherPair);
 
-   Pair<string> wordPair;
-   Pair<string> wordOtherPair;
-   wordPair.Input();
-   wordOtherPair.Input();
-   wordPair.ShowComparison(&wordOtherPair);
+  Pair<string> wordPair;
+  Pair<string> wordOtherPair;
+  wordPair.Input();
+  wordOtherPair.Input();
+  wordPair.ShowComparison(&wordOtherPair);
 
-   return 0;
+  return 0;
 }
