@@ -27,19 +27,17 @@ using namespace std;
 
 int main () {
    list<ListItem> shoppingList;
-   list<ListItem>::iterator iter;
 
    string item;
 
-   // TODO: Read inputs (items) and add them to the shoppingList list
-   //       Read inputs until a -1 is input
-   cin >> item;
+   // Read items into shoppingList until a -1 is input
+   getline(cin, item);
    while (item != "-1"){
       shoppingList.push_back(item);
-      cin >> item;
+      getline(cin, item);
    }
 
-   // TODO: Print the shoppingList list using the PrintNodeData() function
+   // Print shoppingList items with PrintNodeData()
    for(ListItem& item : shoppingList) {
       item.PrintNodeData();
    }
