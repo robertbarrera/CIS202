@@ -1,23 +1,12 @@
 /*
-Given a ListItem class, complete main() using the built-in list type to create a linked list called shoppingList. The program should read items from input (ending with -1), adding each item to shoppingList, and output each item in shoppingList using the PrintNodeData() function.
-
-Ex. If the input is:
-
-milk
-bread
-eggs
-waffles
-cereal
--1
-the output is:
-
-milk
-bread
-eggs
-waffles
-cereal
+File: main.cpp
+Description: This program allows a user to enter any number of items into a list of ListItem class 
+   type elements. The program then traverses the list witha range based for loop to print the name of
+   each list element using the PrintNodeData() class function.
+Created: Thursday April 20, 2023 3:00PM
+Name: Robert Barrera
+Email: barrerar65120@student.vvc.edu
 */
-
 #include "ListItem.h"
 #include <string>
 #include <list>
