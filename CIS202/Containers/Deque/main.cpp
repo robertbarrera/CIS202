@@ -42,26 +42,32 @@ int main() {
     //for (int i = 0; i < forward.size(); ++i){
     while(forward.size() != 0){
         if (forward.front() != backward.front()){
-            cout << "No, \"" << line << "\" is not a palindrome." << endl;
+            result = false;
             break;
         }
         else if (forward.front() == backward.front() && forward.size() == 1){
-            cout << "Yes, \"" << line << "\" is a palindrome." << endl;
+            result = true;
             break;
         }
-        /*
-        if (forward.at(i) != backward.at(i)){
-            cout << "No, \"" << line << "\" is not a palindrome." << endl;
-            break;
-        }
-        if (forward.at(i) == backward.at(i) && i == forward.size() - 1){
-            cout << "Yes, \"" << line << "\" is a palindrome." << endl;
-        }
-        */
         else{
             forward.pop_front();
             backward.pop_front();
         }
+                /*
+        if (forward.at(i) != backward.at(i)){
+            cout << "No, \"" << line << "\" is not a palindrome." << endl;
+            break;
+        }
+        else if (forward.at(i) == backward.at(i) && i == forward.size() - 1){
+            cout << "Yes, \"" << line << "\" is a palindrome." << endl;
+        }
+        */
+    }
+    if (result = true){
+        cout << "Yes, \"" << line << "\" is a palindrome." << endl;
+    }
+    else{
+        cout << "No, \"" << line << "\" is not a palindrome." << endl;
     }
 
    return 0;

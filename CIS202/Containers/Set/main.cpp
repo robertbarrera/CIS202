@@ -42,7 +42,18 @@ vector<int> UniqueRandomInts(unsigned int howMany, int maxNum) {
    vector<int> nums;
 
    /* Type your code here. */
-
+   nextRand = rand() % maxNum;
+   while (nums.size() < howMany){
+      if (alreadySeen.count(nextRand)){
+         retries += 1;
+      }
+      else{
+         nums.push_back(nextRand);
+         alreadySeen.insert(nextRand);
+      }
+      nextRand = rand() % maxNum;
+   }
+   return nums;
 }
 
 int main() {
