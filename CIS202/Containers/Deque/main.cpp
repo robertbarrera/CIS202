@@ -63,11 +63,11 @@ int main() {
         }
         */
     }
-    if (result = true){
+    if (result){
         cout << "Yes, \"" << line << "\" is a palindrome." << endl;
     }
     else{
-        cout << "No, \"" << line << "\" is not a palindrome." << endl;
+         cout << "No, \"" << line << "\" is not a palindrome." << endl;
     }
 
    return 0;
