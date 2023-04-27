@@ -23,22 +23,22 @@ Special case: A one-character string is a palindrome.
 using namespace std;
 
 int main() {
-   string line;
-   bool result;
-   deque<char> forward;
-   deque<char> backward;
-   string::iterator iter;
+    string line;
+    bool result;
+    deque<char> forward;
+    deque<char> backward;
+    string::iterator iter;
 
-   getline(cin, line);
-   for (iter = line.begin(); iter != line.end(); ++iter){
-    if (isalpha(*iter)){
-        forward.push_back(*iter);
-        backward.push_front(*iter);
+    getline(cin, line);
+    for (iter = line.begin(); iter != line.end(); ++iter){
+        if (isalpha(*iter)){
+            forward.push_back(*iter);
+            backward.push_front(*iter);
+        }
+        else{
+            continue;
+        }
     }
-    else{
-        continue;
-    }
-   }
     
     while(forward.size() != 0){
         if (forward.front() != backward.front()){
@@ -54,17 +54,8 @@ int main() {
             backward.pop_front();
         }
     }
+
     /*
-    for (int i = 0; i < line.size(); ++i){
-        if (isalpha(line.at(i))){
-            forward.push_back(line.at(i));
-            backward.push_front(line.at(i));
-        }
-        else{
-            continue;
-        }
-    }
-   
     for (int i = 0; i < forward.size(); ++i){
         if (forward.at(i) != backward.at(i)){
             cout << "No, \"" << line << "\" is not a palindrome." << endl;
