@@ -22,13 +22,14 @@ int main () {
    // Read items into shoppingList until a -1 is input
    getline(cin, item);
    while (item != "-1"){
-      shoppingList.push_back(item);
+      ListItem userItem = ListItem(item);
+      shoppingList.push_back(userItem);
       getline(cin, item);
    }
 
    // Print shoppingList items with PrintNodeData()
-   for(ListItem& item : shoppingList) {
-      item.PrintNodeData();
+   for(ListItem& userItem : shoppingList) {
+      userItem.PrintNodeData();
    }
 
    return 0;
