@@ -25,9 +25,12 @@ the output is
 using namespace std;
 
 // Print the integers in vector nums separated by a space
-void PrintNums(vector<int> nums, int size) {
-   for (int i = 0; i < size; ++i) {
-      cout << nums.at(i) << " ";
+void PrintNums(const vector<int>& nums) {
+   //for (int i = 0; i < size; ++i) {
+   //   cout << nums.at(i) << " ";
+  // }
+   for (auto value: nums){
+      cout << value << " ";
    }
 }
 //cout << "yes";
@@ -68,7 +71,7 @@ int main() {
    srand(641);                      // Seed random number generator for testing
 
    uniqueInts = UniqueRandomInts(howMany, maxNum);
-   PrintNums(uniqueInts, howMany);
+   PrintNums(uniqueInts);
    cout << "  [" << retries << " retries]" << endl;
    
    return 0;

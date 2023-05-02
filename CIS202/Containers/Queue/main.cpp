@@ -43,11 +43,12 @@ int main () {
    while (personName != "-1") {
       // Add personName to peopleInQueue
       peopleInQueue.push(personName);
+      ++counter;
+      
       if (personName == "You"){ //determine youPosition
-        youPosition = peopleInQueue.size();
+        youPosition = counter;
       }
       getline(cin, personName);
-      ++counter;
    }
 
    cout << "Welcome to the ticketing service... " << endl;
