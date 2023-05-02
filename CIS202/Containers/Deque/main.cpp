@@ -24,16 +24,16 @@ using namespace std;
 
 int main() {
     string line;
-    bool result;
+    bool result = false;
     deque<char> forward;
-    deque<char> backward;
+    //deque<char> backward;
     string::iterator iter;
 
     getline(cin, line);
     for (iter = line.begin(); iter != line.end(); ++iter){
         if (isalpha(*iter)){
             forward.push_back(*iter);
-            backward.push_front(*iter);
+            //backward.push_front(*iter);
         }
         else{
             continue;
@@ -41,32 +41,23 @@ int main() {
     }
     
     while(forward.size() != 0){
-        if (forward.front() != backward.front()){
-            result = false;
-            break;
-        }
-        else if (forward.front() == backward.front() && forward.size() == 1){
+        //if (forward.front() != backward.front()){
+        if(forward.size() == 1){
             result = true;
             break;
         }
-        else{
-            forward.pop_front();
-            backward.pop_front();
-        }
-    }
-
-    /*
-    for (int i = 0; i < forward.size(); ++i){
-        if (forward.at(i) != backward.at(i)){
-            cout << "No, \"" << line << "\" is not a palindrome." << endl;
+        //else if (forward.front() == backward.front() && forward.size() == 1){
+        else if (forward.front() != forward.back()){ // && forward.size() == 1){
+            result = false;
             break;
         }
-        else if (forward.at(i) == backward.at(i) && i == forward.size() - 1){
-            cout << "Yes, \"" << line << "\" is a palindrome." << endl;
+        else{
+            result = true;
         }
+        forward.pop_front();
+            //backward.pop_front();
+        forward.pop_back();
     }
-    */
-
     if (result){
         cout << "Yes, \"" << line << "\" is a palindrome." << endl;
     }
