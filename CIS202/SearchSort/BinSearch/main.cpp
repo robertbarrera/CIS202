@@ -20,23 +20,29 @@ vector<int> ReadIntegers() {
 }
 
 int BinarySearch(int target, vector<int> integers, int lower, int upper) {
-    ++ recursions;
     int mid = (lower + upper) / 2;
-    if (lower > upper) {
-        ++comparisons;
+    ++comparisons;
+
+    if(target == integers.at(mid)){
+        ++recursions;
+        //++comparisons;
+        return mid;
+    }
+    else if (lower >= upper){
+        ++recursions;
         return -1;
     }
-    else if (integers.at(mid) < target){
-        ++comparisons;
-        return BinarySearch (target, integers, mid + 1, upper);
-    }
-    else if (integers.at(mid) > target){
-        ++comparisons;
-        return BinarySearch (target, integers, lower, mid - 1);
-    }
     else{
-        ++comparisons;
-        return mid;
+        if (integers.at(mid) < target){
+            ++recursions;
+            ++comparisons;
+            return BinarySearch(target, integers, mid + 1, upper);
+        }
+        else{
+            ++recursions;
+            ++comparisons;
+            return BinarySearch(target, integers, lower, mid - 1);
+        }
     }
 }
 
