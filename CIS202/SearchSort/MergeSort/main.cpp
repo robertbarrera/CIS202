@@ -40,6 +40,7 @@ void Merge(int numbers[], int i, int j, int k) {
    mergedNumbers = new int[mergedSize];
 
    while (leftPos <= j && rightPos <= k) {
+      ++comparisons;
       if (numbers[leftPos] < numbers[rightPos]) {
          mergedNumbers[mergePos] = numbers[leftPos];
          ++leftPos;
@@ -71,9 +72,15 @@ void Merge(int numbers[], int i, int j, int k) {
 
 void MergeSort(int numbers[], int i, int k) {
    int j;
+
    if (i < k) {
-      ++comparisons;
+     // ++comparisons;
       j = (i + k) / 2;
+
+      //if (i != 1 && k != 1){
+        //++comparisons;
+      //}
+
       /* Trace output added to code in book */
       cout << i << " " << j << " | " << j + 1 << " " << k << endl;
 
