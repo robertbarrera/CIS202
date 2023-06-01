@@ -33,15 +33,17 @@ int Node::size() const
    return 1 + sum;
 }
 
+// begin recursive print at root node for tree/subtree
 void Tree::print() const{
     if (root != nullptr){
-        root->print();
+        root->print(); //print if root node has children nodes
     }
 }
 
+// will recursively print in depth-first preorder
 void Node::print() const{
     std::cout << data << std::endl;
-    for (Node* np: children){
+    for (Node* np: children){ // traverse down tree/subtree, print all children node data
         np->print();
     }
 }
