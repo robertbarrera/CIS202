@@ -40,9 +40,8 @@ void Tree::print() const{
 }
 
 void Node::print() const{
-//    std::cout << data << std::endl;
+    std::cout << data << std::endl;
     for (Node* np: children){
         np->print();
     }
-    std::cout << data << std::endl;
 }
