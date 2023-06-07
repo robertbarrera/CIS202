@@ -38,27 +38,26 @@ int main() {
     Mountain m7("Zugspitze", "Switzerland", 9719);
     mountains.push_back(m7);
 
-    //output formatted columns and titles for table that will hold mountain information
+    //output formatted column titles for table that will hold mountain information
     cout << left << setw(28) << "Mountain" << "| " << setw(21) << "Country" << "| "
-        << setw(21) << "Elevation (Feet)" << "| " << setw(21) << "Elevation (Meters)" << "|" << endl;
-
-    cout << setw(98) << setfill('-') << "" << endl;
+        << setw(21) << "Elevation" << endl;
+    cout << setw(73) << setfill('=') << "" << endl; //this row separates titles from object info in the table
 
     //iterate through vector to print each object's name, country, elevation in feet, and elevation in meters. End on a new line.
     for (Mountain mountain : mountains){
-            cout << left << setw(28) << setfill(' ') << mountain.getName() << "| " << setw(21) << mountain.getCountry() << "| "
-                << setw(21) << mountain.getElevation() << "| " << setw(21) << mountain.toMeters() << "|" << endl
-                << setw(98) << setfill('-') << "" << endl; // row of dashes to separate table rows with object info
+        cout << left << setw(28) << setfill(' ') << mountain.getName() << "| "
+            << setw(21) << mountain.getCountry() << "| "
+            << mountain.getElevation() << " ft (" << fixed << setprecision(2) << mountain.toMeters() << " m)" << endl;
     }
 
     //get shortest elevation value, iterate through vector to find object with matching elevation
     shortest = minElevation(mountains); 
     for (Mountain mountain : mountains){
-        //if correct object found, output mountain name and respective elevation
+        //if correct object found, output mountain name and respective elevation and break loop
         if (mountain.getElevation() == shortest){
-            cout << "\n" << mountain.getName() << " is the shortest mountain with an elevation of "
-                << mountain.getElevation() << " feet, or " << mountain.toMeters() << " meters"<< endl;
-            break; //break loop if correct Mountain found
+            cout << "\n" << "Shortest mountain: " << mountain.getName() << " with an elevation of "
+                << mountain.getElevation() << " ft (" << mountain.toMeters() << " m)"<< endl;
+            break;
         }
     }
 }

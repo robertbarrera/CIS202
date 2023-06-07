@@ -1,6 +1,5 @@
 #include "mountain.h"
 #include <iostream>
-#include <iomanip>
 
 //default constructor to initialize values before using mutator functions for data members
 Mountain::Mountain(){
