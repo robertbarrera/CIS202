@@ -1,1 +1,1 @@
-# personal codespaces for completing labs prior to the chapter on Trees
+# Personal codespaces for CIS202 content
