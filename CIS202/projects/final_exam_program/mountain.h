@@ -1,3 +1,12 @@
+/*
+File: mountain.h
+Description: This file contains the declarations for Mountain class data members and functions. This
+    includes constructors, accessors, mutators, and a function to convert the elevation from its default
+    unit (feet) to meters.
+Created: Monday June 6, 2023 2:30PM
+Name: Robert Barrera
+Email: barrerar65120@student.vvc.edu
+*/
 #ifndef MOUNTAIN_H
 #define MOUNTAIN_H
 

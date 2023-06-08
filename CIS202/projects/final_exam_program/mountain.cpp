@@ -1,3 +1,13 @@
+/*
+File: mountain.cpp
+Description: This file contains the definitions for Mountain class objects. A default constructor and a 
+    paramterized constructor to intiialize the name, country, and elevation data members are defined.
+    Accessors and mutators to individually change and return data member values are also defined, along
+    with a function to convert the class objects elevation from feet to meters.
+Created: Monday June 6, 2023 2:30PM
+Name: Robert Barrera
+Email: barrerar65120@student.vvc.edu
+*/
 #include "mountain.h"
 #include <iostream>
 
